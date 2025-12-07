@@ -15,7 +15,7 @@ Centralized Game Server
 3. Assigns hidden roles (1 Alien + remaining Humans)
 4. Selects a random secret keyword for Humans
 5. Manages 3 clue rounds, voting phase, and scoring
-6. 6. Broadcasts all game updates to connected clients
+6. Broadcasts all game updates to connected clients
 
 Client Application
 1. Connects to server and submits username

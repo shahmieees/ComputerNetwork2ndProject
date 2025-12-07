@@ -8,49 +8,21 @@ This project was created as part of Computer Networks – Project 4: Build Your 
 The game supports 3–6 players and allows them to join a lobby, receive hidden roles, give clues, vote, and score points—all coordinated by a central server using a custom communication protocol.
 
 🚀 Features
-🖥 Centralized Game Server (gameserver.py)
 
-Accepts multiple TCP client connections
+Centralized Game Server
+1. Accepts JOIN requests from multiple clients
+2. Tracks player names, roles, scores, and connection status
+3. Assigns hidden roles (1 Alien + remaining Humans)
+4. Selects a random secret keyword for Humans
+5. Manages 3 clue rounds, voting phase, and scoring
+6. 6. Broadcasts all game updates to connected clients
 
-Registers usernames and tracks player states
-
-Randomly assigns roles (1 Alien + Humans with keyword)
-
-Coordinates:
-
-3 rounds of clue submissions
-
-Voting
-
-Scoring and round results
-
-Maintains persistent scoreboard across games
-
-Controls game flow using a custom protocol
-
-Starts the game only when:
-
-A player types START and at least 3 players are connected
-
-The room reaches maximum capacity (6 players) → auto-start
-
-Prevents auto-start when exactly 3 players join (old behavior removed)
-
-🎮 Client Application (gameclient.py)
-
-Connects to the server and sends JOIN|username
-
-Receives role assignment and round instructions
-
-Sends clue messages and votes
-
-Types START to begin the game (requires ≥3 players)
-
-Types QUIT to exit the session
-
-Displays server broadcasts in real time
-
-Uses threading to receive messages in background while allowing player input
+Client Application
+1. Connects to server and submits username
+2. Displays all broadcast messages (roles, clues, round prompts, results, scores)
+3. Allows players to input clues and cast votes
+4. Supports sending the START command to begin the game
+5. Provides an interactive, text-based interface in the terminal
 
 🏁 Game Start Rules
 

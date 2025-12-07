@@ -71,8 +71,11 @@ NEXT → continue with a new keyword
 QUIT → exit the session
 
 📁 Project Structure
+
 ├── gameserver.py     # Main game server (TCP)
+
 ├── gameclient.py     # Client application
+
 └── README.md
 
 🛠 Installation & Usage
